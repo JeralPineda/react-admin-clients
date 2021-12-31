@@ -6,8 +6,8 @@ const Layout = () => {
    const urlActual = location.pathname;
 
    return (
-      <div className="md:flex md:min-h-screen bg-gray-800 text-white">
-         <div className="md:w-1/4 bg-gray-900  px-5 py-10">
+      <div className="md:flex md:min-h-screen bg-gray-900 text-white">
+         <div className="md:w-1/4 bg-gray-800  px-5 py-10">
             <h2 className="text-4xl font-black text-center text-white">CRM - Clientes</h2>
             <nav className="mt-10">
                <Link
@@ -25,7 +25,7 @@ const Layout = () => {
             </nav>
          </div>
 
-         <div className="md:w-3/4 p-10">
+         <div className="md:w-3/4 p-10 md: h-screen overflow-x-auto">
             <Outlet />
          </div>
       </div>
