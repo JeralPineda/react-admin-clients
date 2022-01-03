@@ -21,9 +21,7 @@ const VewClient = () => {
             console.log(error);
          }
 
-         setTimeout(() => {
-            setCargando(!cargando);
-         }, 2000);
+         setCargando(!cargando);
       };
       obtenerClienteAPI();
    }, []);
