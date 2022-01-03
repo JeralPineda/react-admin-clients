@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
+import Alert from '../components/Alert';
 import Form from '../components/Form';
 
 const EditClient = () => {
@@ -31,13 +32,17 @@ const EditClient = () => {
          <h1 className="font-black text-4xl">Editar cliente</h1>
          <p className="mt-3">Utiliza este formulario para editar datos de un cliente</p>
 
-         <Form
-            //
-            titleForm="Editar Cliente"
-            titleButton="Guardar"
-            cliente={cliente}
-            cargando={cargando}
-         />
+         {cliente?.nombre ? (
+            <Form
+               //
+               titleForm="Editar Cliente"
+               titleButton="Guardar"
+               cliente={cliente}
+               cargando={cargando}
+            />
+         ) : (
+            <Alert mensaje="Cliente ID no valido" />
+         )}
       </div>
    );
 };
