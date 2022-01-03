@@ -34,7 +34,9 @@ const Form = () => {
          console.log(resultado);
 
          navigate('/clientes');
-      } catch (error) {}
+      } catch (error) {
+         console.log(error);
+      }
    };
 
    return (

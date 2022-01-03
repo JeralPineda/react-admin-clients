@@ -1,10 +1,30 @@
+import {useEffect, useState} from 'react';
 
 const Home = () => {
-    return (
-        <div>
-            <h1>Home</h1>
-        </div>
-    )
-}
+   const [clientes, setClientes] = useState([]);
 
-export default Home
+   useEffect(() => {
+      const obtenerClientesAPI = async () => {
+         try {
+            const url = 'http://localhost:4000/clientes';
+
+            const respuesta = await fetch(url);
+
+            const resultado = await respuesta.json();
+
+            setClientes(resultado);
+         } catch (error) {
+            console.log(error);
+         }
+      };
+
+      obtenerClientesAPI();
+   }, []);
+   return (
+      <div>
+         <h1>Home</h1>
+      </div>
+   );
+};
+
+export default Home;
