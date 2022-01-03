@@ -45,12 +45,13 @@ const Form = ({ titleForm, titleButton, cliente }) => {
 
          <Formik
             initialValues={{
-               nombre: '',
-               empresa: '',
-               email: '',
-               telefono: '',
-               notas: '',
+               nombre: cliente?.nombre ?? '',
+               empresa: cliente?.empresa ?? '',
+               email: cliente?.email ?? '',
+               telefono: cliente?.telefono ?? '',
+               notas: cliente?.notas ?? '',
             }}
+            enableReinitialize={true} //mostrar info en form
             onSubmit={async (values, { resetForm }) => {
                await handleSubmit(values);
 
@@ -155,6 +156,11 @@ const Form = ({ titleForm, titleButton, cliente }) => {
          </Formik>
       </div>
    );
+};
+
+//Props default si no viene
+Form.defaultProps = {
+   cliente: {},
 };
 
 export default Form;
