@@ -29,6 +29,8 @@ const VewClient = () => {
       <div>
          {cargando ? (
             'cargando....'
+         ) : Object.keys(cliente).length === 0 ? (
+            <p>No Hay Resultados</p>
          ) : (
             <>
                <h1 className="font-black text-4xl">Ver Cliente: {cliente.nombre}</h1>
