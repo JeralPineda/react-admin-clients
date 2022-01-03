@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
+import Loader from '../components/Loader';
 
 const VewClient = () => {
    const [cliente, setCliente] = useState({});
@@ -20,7 +21,9 @@ const VewClient = () => {
             console.log(error);
          }
 
-         setCargando(!cargando);
+         setTimeout(() => {
+            setCargando(!cargando);
+         }, 2000);
       };
       obtenerClienteAPI();
    }, []);
@@ -28,7 +31,7 @@ const VewClient = () => {
    return (
       <div>
          {cargando ? (
-            'cargando....'
+            <Loader />
          ) : Object.keys(cliente).length === 0 ? (
             <p>No Hay Resultados</p>
          ) : (
