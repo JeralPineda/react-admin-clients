@@ -27,7 +27,7 @@ const Home = () => {
          <h1 className="font-black text-4xl">Clientes</h1>
          <p className="mt-3">Administra tus clientes</p>
 
-         <table className="w-full mt-5 table-auto shadow bg-gray-700">
+         <table className="w-full mt-5 table-auto shadow-xl bg-gray-600">
             <thead className="bg-gray-800">
                <tr>
                   <th className="p-2">Nombre</th>
