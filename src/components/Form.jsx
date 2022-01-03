@@ -1,10 +1,10 @@
 import React from 'react';
-import {useNavigate} from 'react-router-dom';
-import {Formik, Form as Forms, Field, ErrorMessage} from 'formik';
+import { useNavigate } from 'react-router-dom';
+import { Formik, Form as Forms, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import Alert from './Alert';
 
-const Form = () => {
+const Form = ({ titleForm, titleButton, cliente }) => {
    // useNavigate para redireccionar
    const navigate = useNavigate();
 
@@ -41,7 +41,7 @@ const Form = () => {
 
    return (
       <div className="bg-gray-800 mt-10 px-5 py-10 rounded-md md:w-3/4 mx-auto shadow-xl">
-         <h1 className="text-gray-600 font-bold text-xl uppercase text-center">Agregar Cliente</h1>
+         <h1 className="text-gray-600 font-bold text-xl uppercase text-center">{titleForm}</h1>
 
          <Formik
             initialValues={{
@@ -51,13 +51,13 @@ const Form = () => {
                telefono: '',
                notas: '',
             }}
-            onSubmit={async (values, {resetForm}) => {
+            onSubmit={async (values, { resetForm }) => {
                await handleSubmit(values);
 
                resetForm();
             }}
             validationSchema={newSchema}>
-            {({errors, touched}) => {
+            {({ errors, touched }) => {
                return (
                   <Forms className="mt-10">
                      <div className="mb-4">
@@ -147,7 +147,7 @@ const Form = () => {
                         //
                         className="mt-5 w-full bg-gray-300 p-3 text-gray-900 uppercase font-bold text-lg rounded-md hover:bg-gray-400"
                         type="submit">
-                        Agregar Cliente
+                        {titleButton}
                      </button>
                   </Forms>
                );
