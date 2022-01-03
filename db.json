@@ -1,12 +1,20 @@
 {
-    "clientes": [
-        {
-            "nombre": "juan",
-            "empresa": "vegbhb",
-            "email": "jeral.cris.jp@gmail.com",
-            "telefono": "13244444445",
-            "notas": "eynhnjn",
-            "id": 1
-        }
-    ]
+  "clientes": [
+    {
+      "nombre": "juan",
+      "empresa": "vegbhb",
+      "email": "jeral.cris.jp@gmail.com",
+      "telefono": "13244444445",
+      "notas": "eynhnjn",
+      "id": 1
+    },
+    {
+      "nombre": "cedf",
+      "empresa": "vegbhb",
+      "email": "jeral.cris.jp@gmail.com",
+      "telefono": "78900347634",
+      "notas": "gggg",
+      "id": 2
+    }
+  ]
 }
