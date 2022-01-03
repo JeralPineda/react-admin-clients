@@ -1,28 +1,3 @@
 {
-  "clientes": [
-    {
-      "nombre": "juan",
-      "empresa": "vegbhb",
-      "email": "jeral.cris.jp@gmail.com",
-      "telefono": "13244444445",
-      "notas": "eynhnjn",
-      "id": 1
-    },
-    {
-      "nombre": "cedf",
-      "empresa": "vegbhb",
-      "email": "jeral.cris.jp@gmail.com",
-      "telefono": "78900347634",
-      "notas": "gggg",
-      "id": 2
-    },
-    {
-      "nombre": "Jeral Pineda",
-      "empresa": "Mi Empresa",
-      "email": "jeral.cris@gmail.com",
-      "telefono": "99999999",
-      "notas": "Aprendiendo nuevas tecnologias",
-      "id": 3
-    }
-  ]
+  "clientes": []
 }
