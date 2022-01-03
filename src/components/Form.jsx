@@ -1,10 +1,11 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Formik, Form as Forms, Field, ErrorMessage } from 'formik';
+import {useNavigate} from 'react-router-dom';
+import {Formik, Form as Forms, Field, ErrorMessage} from 'formik';
 import * as yup from 'yup';
 import Alert from './Alert';
+import LoaderForm from './LoaderForm';
 
-const Form = ({ titleForm, titleButton, cliente }) => {
+const Form = ({titleForm, titleButton, cliente, cargando}) => {
    // useNavigate para redireccionar
    const navigate = useNavigate();
 
@@ -39,7 +40,9 @@ const Form = ({ titleForm, titleButton, cliente }) => {
       }
    };
 
-   return (
+   return cargando ? (
+      <LoaderForm />
+   ) : (
       <div className="bg-gray-800 mt-10 px-5 py-10 rounded-md md:w-3/4 mx-auto shadow-xl">
          <h1 className="text-gray-600 font-bold text-xl uppercase text-center">{titleForm}</h1>
 
@@ -52,13 +55,13 @@ const Form = ({ titleForm, titleButton, cliente }) => {
                notas: cliente?.notas ?? '',
             }}
             enableReinitialize={true} //mostrar info en form
-            onSubmit={async (values, { resetForm }) => {
+            onSubmit={async (values, {resetForm}) => {
                await handleSubmit(values);
 
                resetForm();
             }}
             validationSchema={newSchema}>
-            {({ errors, touched }) => {
+            {({errors, touched}) => {
                return (
                   <Forms className="mt-10">
                      <div className="mb-4">
@@ -161,6 +164,7 @@ const Form = ({ titleForm, titleButton, cliente }) => {
 //Props default si no viene
 Form.defaultProps = {
    cliente: {},
+   cargando: false,
 };
 
 export default Form;

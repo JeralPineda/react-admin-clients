@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import {useEffect, useState} from 'react';
+import {useParams} from 'react-router-dom';
 import Form from '../components/Form';
 
 const EditClient = () => {
    const [cliente, setCliente] = useState({});
    const [cargando, setCargando] = useState(true);
 
-   const { id } = useParams();
+   const {id} = useParams();
 
    useEffect(() => {
       const obtenerClienteAPI = async () => {
@@ -31,7 +31,13 @@ const EditClient = () => {
          <h1 className="font-black text-4xl">Editar cliente</h1>
          <p className="mt-3">Utiliza este formulario para editar datos de un cliente</p>
 
-         <Form titleForm="Editar Cliente" titleButton="Guardar" cliente={cliente} />
+         <Form
+            //
+            titleForm="Editar Cliente"
+            titleButton="Guardar"
+            cliente={cliente}
+            cargando={cargando}
+         />
       </div>
    );
 };
