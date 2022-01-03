@@ -15,6 +15,14 @@
       "telefono": "78900347634",
       "notas": "gggg",
       "id": 2
+    },
+    {
+      "nombre": "Jerl",
+      "empresa": "Mi Empresa",
+      "email": "jeral.cris@gmail.com",
+      "telefono": "99999999",
+      "notas": "Aprendiendo nuevas tecnologias",
+      "id": 3
     }
   ]
 }

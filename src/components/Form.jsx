@@ -1,9 +1,13 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
 import {Formik, Form as Forms, Field, ErrorMessage} from 'formik';
 import * as yup from 'yup';
 import Alert from './Alert';
 
 const Form = () => {
+   // useNavigate para redireccionar
+   const navigate = useNavigate();
+
    // Validaciones del formulario
    const newSchema = yup.object().shape({
       nombre: yup.string().min(3, 'El nombre es muy corto').max(20, 'El nombre es muy largo').required('El nombre es obligatorio'),
@@ -28,6 +32,8 @@ const Form = () => {
          const resultado = await respuesta.json();
 
          console.log(resultado);
+
+         navigate('/clientes');
       } catch (error) {}
    };
 
